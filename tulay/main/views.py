@@ -22,3 +22,7 @@ def subject_student(request):
         return render(request,"subject_student.html")
 def student_portal(request):
         return render(request,"student_portal.html")
+def teacher_portal(request):
+        return render(request,"teachersportal.html")
+def teacher_nav_portal(request):
+        return render(request,"left_nav_teachers.html")

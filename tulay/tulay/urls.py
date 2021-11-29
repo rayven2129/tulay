@@ -22,8 +22,10 @@ urlpatterns = [
     path('',views.index),
     path('enrollment_page1/',views.enrollmentsystem_page1),
     path('enrollment_page2/',views.enrollmentsystem_page2),
-    path('left_nav/',views.left_nav),
-    path('subject_student/',views.subject_student),
-    path('student_portal/',views.student_portal, name="Student Portal"),
+    path('menu/left_nav/',views.left_nav),
+    path('menu/subject_student',views.subject_student),
+    path('menu/student_portal',views.student_portal, name="Student Portal"),
+    path('menu/teachers_portal',views.teacher_portal, name="Teacher Portal"),
+    path('menu/teacher_nav_portal',views.teacher_nav_portal, name="Teacher_NavPortal"),
     
 ]
