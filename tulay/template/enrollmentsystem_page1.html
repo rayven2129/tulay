@@ -1,0 +1,156 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" type="text/css" href="{%static '/bootstrap/css/bootstrap.min.css'%}">
+			<script type="text/javascript" src="{%static '/bootstrap/js/bootstrap.min.js'%}"></script>
+	</head>
+	<style type="text/css">
+		.header-photo{
+			background-image: url("{%static './images/header-logo.jpg'%}");
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 10em;
+		}
+		.header-text{
+			color: white;
+			font-family: "Arial";
+		}
+		.name-form{
+			width: 15em;
+			padding-left: 5px;
+		}
+		.address-form{
+			width: 50em;
+		}
+		hr{
+			border-style: solid;
+			border-color: black;
+		}
+
+	</style>
+	<body>
+		<div class="container header-photo">
+			<br><br><br><br>
+			<h1 class="text-center header-text">Online Enrollment Entry</h1>
+		</div>
+		<div class="container">
+			<h5 class="font-weight-bold">INSTRUCTION: Please fill out all the neccesary information. Do not leave any item blank</h5>
+			<h5 class="font-weight-bold">If the information is not applicable. N/A shall be written. All * symbol are required</h5>
+			<br>
+				<label for="select-type"><h5>Student Type*</h5></label><br>
+				<input type="radio" name="stusent_type" id="stud_type" value="Regular"> Old
+				<br><input type="radio" name="stusent_type" id="stud_type" value="Regular"> New
+				<br><input type="radio" name="stusent_type" id="stud_type" value="Regular"> Transferee
+				<br>
+				<br>
+				<div class="form-inline">
+					<label for="date"><h5>Date</h5></label>
+					<input type="date" name="date" id="date" class="form-control">
+				</div>
+			<hr>
+		</div>
+		<div class="container form-inline">
+			<label for="personal-data"><h5>Personal Data*</h5></label>
+			<input type="text" name="" id="personal-data" placeholder="Last Name" class="name-form form-control">
+			<input type="text" name="" placeholder="First Name" class="name-form form-control">
+			<input type="text" name="" placeholder="Middle Name" class="name-form form-control">
+		</div>
+		<br>
+		<div class="container">
+			<label for="gender-form"><h5>Gender*</h5></label>
+			<select class="btn btn-outline-info" id="gender-form">
+				<option>Please Select</option>
+				<option>Male</option>
+				<option>Female</option>
+				<option>Other</option>
+			</select>			
+		</div>
+		<div class="container form-inline">
+			<label for="date-of-birth"><h5>Date of Birth*</h5></label>
+			<input type="date" name="" id="date-of-birth" class="form-control">
+		</div>
+		<div class="container">
+			<label for="place-of-birth"><h5>Place of Birth*</h5></label>
+			<input type="text" name="" id="place-of-birth" class="address-form form-control">
+		</div><br>
+		<div class="container">
+			<label for="nationality-form"><h5>Nationality*</h5></label>
+			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> FILIPINO
+			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> KOREAN
+			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> JAPANESE
+			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> CHINESE
+			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> INDIAN
+			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> OTHERS			
+		</div>
+		<div class="container">
+			<label for="religion-form"><h5>Religion*</h5></label>
+			<select class="btn btn-outline-info" id="religion-form">
+				<option>Please Select</option>
+				<option>ROMAN CATHOLIC</option>
+				<option>INC</option>
+				<option>BORN AGAIN</option>
+				<option>CHRISTIAN</option>
+				<option>MUSLIM</option>
+				<option>OTHERS</option>
+			</select>			
+		</div>
+		<div class="container">
+			<label for="complete_address"><h5>Complete Address*</h5></label>
+			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Street/Villages/Sitio">
+		 	<p>Street Address Line 1</p>
+		</div>
+		<div class="container">
+			<label for="complete_address"><h5></h5></label>
+			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Barangay">
+		 	<p>Street Address Line 2</p>
+		</div>
+		<div class="container">
+			<div class="form-inline">
+				<input type="text" name="city" id="city" class="form-control" placeholder="City/Municipality">
+				<input type="text" name="city" id="city" class="form-control" placeholder="Province">
+			</div>
+		</div>	
+		<div class="container">
+			<label for="complete_address"><h5>Permanent Address*</h5></label>
+			<input type="checkbox" name="address" id="check_complete">Same as Complete Address
+			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Street/Villages/Sitio">
+		 	<p>Street Address Line 1</p>
+		</div>
+		<div class="container">
+			<label for="complete_address"><h5></h5></label>
+			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Barangay">
+		 	<p>Street Address Line 2</p>
+		</div>
+		<div class="container">
+			<div class="form-inline">
+				<input type="text" name="city" id="city" class="form-control" placeholder="City/Municipality">
+				<input type="text" name="city" id="city" class="form-control" placeholder="Province">
+			</div>
+		</div>
+		<br>
+		<div class="container">
+			<label for="contact_number"><h5>Contact Number*</h5></label>
+			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+		<br>
+		<div class="container">
+			<label for="contact_number"><h5>Email Address*</h5></label>
+			<input type="email" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+		<br>
+		<div class="container form-inline">
+			<button type="button" class="btn btn-success" id="btn_next">Next</button>&nbsp;
+			<button type="button" class="btn btn-primary">Clear</button>
+		</div>
+	</body>
+</html>
+<script>
+	var x = document.querySelector('#btn_next');
+		x.onclick = function(){
+			window.location.assign('../enrollment_page2');
+		}
+
+</script>

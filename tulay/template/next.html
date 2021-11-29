@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	{% load static%}
+	<head>
+		<title></title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css'%}">
+			<script type="text/javascript" src="{% static '/bootstrap/js/bootstrap.min.js'%}"></script>
+	</head>
+	<style type="text/css">
+		.header-photo{
+			background-image: url("{%static './images/header-logo.jpg'%}");
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 10em;
+		}
+		.header-text{
+			color: white;
+			font-family: "Arial";
+		}
+		.name-form{
+			width: 15em;
+			padding-left: 5px;
+		}
+		.address-form{
+			width: 50em;
+		}
+		hr{
+			border-style: solid;
+			border-color: black;
+		}
+        .b-justify{
+            text-align: justify;
+            font-weight: bold;
+        }
+        .aling_design{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            align-self: center;
+        }
+
+	</style>
+	<body>
+		<div class="container header-photo">
+			<br><br><br><br>
+			<h1 class="text-center header-text">Online Enrollment Entry</h1>
+		</div>
+		<div class="container">
+			<h5 class="font-weight-bold">INSTRUCTION: Please fill out all the neccesary information. Do not leave any item blank</h5>
+			<h5 class="font-weight-bold">If the information is not applicable. N/A shall be written</h5>
+			<hr>
+		</div>
+        <div class="container">
+            <h2>Family Background</h2>
+        </div>
+		<div class="container form-inline">
+			<label for="personal-data"><h5>Fathers Name</h5></label>
+			<input type="text" name="" id="personal-data" placeholder="Last Name" class="name-form form-control">
+			<input type="text" name="" placeholder="First Name" class="name-form form-control">
+			<input type="text" name="" placeholder="Middle Name" class="name-form form-control">
+		</div>
+		<br>
+		<div class="container form-inline">
+			<label for="date-of-birth"><h5>Date of Birth </h5></label>
+			<input type="date" name="" id="date-of-birth" class="form-control">
+            <label for="place-of-birth"><h5>Email Address</h5></label>
+			<input type="text" name="" id="place-of-birth" class="form-control">
+		</div>
+        <br>
+        <div class="container">
+			<label for="contact_number"><h5>Contact Number</h5></label>
+			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+        <br>
+        <div class="container">
+			<label for="contact_number"><h5>Occupation</h5></label>
+			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+        <br>
+        <div class="container form-inline">
+			<label for="personal-data"><h5>Mothers Name</h5></label>
+			<input type="text" name="" id="personal-data" placeholder="Last Name" class="name-form form-control">
+			<input type="text" name="" placeholder="First Name" class="name-form form-control">
+			<input type="text" name="" placeholder="Middle Name" class="name-form form-control">
+		</div>
+		<br>
+		<div class="container form-inline">
+			<label for="date-of-birth"><h5>Date of Birth </h5></label>
+			<input type="date" name="" id="date-of-birth" class="form-control">
+            <label for="place-of-birth"><h5>Email Address</h5></label>
+			<input type="text" name="" id="place-of-birth" class="form-control">
+		</div>
+        <br>
+        <div class="container">
+			<label for="contact_number"><h5>Contact Number</h5></label>
+			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+        <br>
+        <div class="container">
+			<label for="contact_number"><h5>Occupation</h5></label>
+			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+		<div class="container">
+			<hr>
+		</div><br>
+        
+		<div class="container">
+            <h2>Educational Background</h2>
+        </div>
+        <div class="container">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Head</th>
+                        <th>School Name</th>
+                        <th>Address</th>
+                        <th>School Year</th>
+                    </tr>
+                </thead>
+            </table>
+            <button type="button" class="btn btn-dark">Add New Row</button>
+        </div>
+        <div class="container">
+			<hr>
+		</div><br>
+        <div class="container">
+            <h2>Guardian information(In case of Emergency)</h2>
+        </div>
+        <div class="container form-inline">
+			<label for="personal-data"><h5>Guardian's Name</h5></label>
+			<input type="text" name="" id="personal-data" placeholder="Last Name" class="name-form form-control">
+			<input type="text" name="" placeholder="First Name" class="name-form form-control">
+			<input type="text" name="" placeholder="Middle Name" class="name-form form-control">
+		</div>
+        <br>
+		<div class="container form-inline">
+			<label for="date-of-birth"><h5>Date of Birth </h5></label>
+			<input type="date" name="" id="date-of-birth" class="form-control">
+            <label for="place-of-birth"><h5>Email Address</h5></label>
+			<input type="text" name="" id="place-of-birth" class="form-control">
+		</div>
+        <br>
+        <div class="container">
+			<label for="contact_number"><h5>Contact Number</h5></label>
+			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+        <br>
+        <div class="container">
+			<label for="contact_number"><h5>Relationship to Students</h5></label>
+			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+		</div>
+        <div class="container">
+            
+            <input type="checkbox" name="checkbox" id="checkbox">
+           <span class="b-justify"> I hereby allow/autorize Recto Memorial National High School to use, collect and process information for legitimate specifically for promotion of the school program and services, and allow authorized personnel to process to process the information pursuant to Data Privacy policies of the school.</span>
+        </div>
+        <br>
+        <div class="container">
+            <center>
+                <button class="btn btn-success"><h2>Register</h2></button>
+                <button class="btn btn-danger"><h2>Cancel</h2></button>
+            </center>
+        </div>
+	</body>
+</html>

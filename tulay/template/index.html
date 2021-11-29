@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static '/fontawesome/css/all.css'%}">
+          <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          --><link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css'%}">
+          <script type="text/javascript" src="{% static '/bootstrap/js/bootstrap.min.js'%}"></script>
+          <script type="text/javascript" src="{% static '/fontawesome/js/all.js'%}"></script>
+          <!--<script src="https://kit.fontawesome.com/f9a76d52b7.js" crossorigin="anonymous"></script>-->
+        <title></title>
+      </head>
+<style>
+    .logo-div{ 
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+    }
+    .logo{
+        width: 20em;
+    }
+    h5{
+        text-decoration: none;
+        color: #000000;
+    }
+    .field-div{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    #user_scan_login{
+        display: none;
+    }
+    .qrlogo{
+        width: 20em;
+    }
+</style>
+<body>
+    <div class="container-fluid logo-div">
+        <img src="{% static 'images/logo.jpg'%}" alt="logo" class="logo">
+    </div>
+    <div>
+        <div class="container-fluid logo-div">
+        <table>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-link" id="firstOption"><h5>Account Login</h5></button>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <button type="button" class="btn btn-link" id="secondOption"><h5>Secure Login</h5></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="container-fluid field-div" id="user_type_login">
+        <center>
+            <form action="" method="post">
+                {% csrf_token %}
+        <table>
+            
+            <tr>
+                <td><input type="text" name="student_username" id="student_username" class="form-control"></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="student_password" id="student_password" class="form-control"></td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <input type="checkbox" name="showpass" id="showpass">Show Password
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-dark form-control">Login</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" id="btn_enroll" class="btn btn-dark form-control">Enroll</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        <p>Forgot Password</p>
+                    </center>
+                </td>
+            </tr>
+        
+        </table>
+    </form>
+    </center>
+    </div>
+    <div id="user_scan_login" class="container-fluid field-div">
+        <center>
+          <img src="{% static 'images/myqrcode.jpg'%}" alt="qrcode" class="qrlogo">
+        
+    </center>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    secondOption.onclick = function(){
+        document.querySelector("#user_scan_login").style.display = "block";
+        document.querySelector("#user_type_login").style.display = "none";
+    }
+    firstOption.onclick = function(){
+        document.querySelector("#user_scan_login").style.display = "none";
+        document.querySelector("#user_type_login").style.display = "block";
+    }
+</script>
+<script>
+    document.querySelector("#btn_enroll").onclick = function(){
+        window.location.assign('../enrollment_page1')
+    }
+</script>
+<script>
+    document.querySelector("#showpass").onclick = function(){
+        var x = document.querySelector("#student_password");
+        if(x.type == "password"){
+            x.type = "text";
+        }else{
+            x.type = "password";
+        }
+    }
+</script>

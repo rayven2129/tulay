@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%load static%}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static '/fontawesome/css/all.css'%}">
+          <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          --><link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css'%}">
+          <script type="text/javascript" src="{%static '/bootstrap/js/bootstrap.min.js'%}"></script>
+          <script type="text/javascript" src="{%static '/fontawesome/js/all.js'%}"></script>
+          <!--<script src="https://kit.fontawesome.com/f9a76d52b7.js" crossorigin="anonymous"></script>-->
+        <title></title>
+      </head>
+<style>
+.images-logo{
+    width: 8em;
+    height: 8em;
+    margin-left: -2em;
+}
+.color-design{
+    color: #808080;
+}
+hr{
+    border: solid #000000;
+}
+.left-panel{
+    border-right: solid #000000;
+    width: 6em;
+    height: 32em;
+    margin-left: auto;
+}
+.content-panel{
+    width: 50em;
+    height: 32em;
+    margin-left: -4em;
+}
+.btn-search,.nav-bar{
+    margin-top: 3em;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"><img src="{% static 'images/logo.jpg'%}" alt="logo" class="images-logo"></div>
+            <div class="col"><a href=""><h6 class="nav-bar color-design">Home</h6></a></div>
+            <div class="col"><a href=""><h6 class="nav-bar color-design">Todo</h6></a></div>
+            <div class="col"><a href=""><h6 class="nav-bar color-design">Classroom</h6></a></div>
+            <div class="col"><a href=""><h6 class="nav-bar color-design">Browse Me</h6></a></div>
+            <div class="col"><a href=""><h6 class="nav-bar color-design">Message</h6></a></div>
+            <div class="col"><a href=""><h6 class="nav-bar color-design">Calendar</h6></a></div>
+            <div class="col"><div class="input-group-append"><input type="search" class="nav-bar"><button type="submit" class="btn btn-primary btn-search"><i class="fa fa-search"></i></button></div></div>
+            <div class="col"><h6 class="nav-bar color-design"><a href="teachersportal.html"><i class="fas fa-user fa-2x"></i></a></h6></div>
+            <!--<div class="col"><h6 class="nav-bar"><i class="far fa-bell fa-2x"></i></h6></div>
+            <div class="col"><h6 class="nav-bar"><i class="fas fa-book fa-2x"></i></h6></div>-->
+        </div>
+        <hr>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <iframe src="/left_nav" frameborder="0" class="left-panel"></iframe>
+                </div>
+                <div class="col-md-8">
+                    <iframe src="/subject_student" frameborder="0" class="content-panel"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+                        
+        </div>
+    </div>
+</body>
+</html>
