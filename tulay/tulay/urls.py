@@ -27,5 +27,8 @@ urlpatterns = [
     path('menu/student_portal',views.student_portal, name="Student Portal"),
     path('menu/teachers_portal',views.teacher_portal, name="Teacher Portal"),
     path('menu/teacher_nav_portal',views.teacher_nav_portal, name="Teacher_NavPortal"),
+    path('menu/subject',views.subject),
+    path('menu/url_review',views.url_review),
+    path('menu/review',views.review),
     
 ]

@@ -26,3 +26,9 @@ def teacher_portal(request):
         return render(request,"teachersportal.html")
 def teacher_nav_portal(request):
         return render(request,"left_nav_teachers.html")
+def subject(request):
+        return render(request,"subject.html")
+def url_review(request):
+        return render(request,"url-review.html")
+def review(request):
+        return render(request,"review.html")
