@@ -38,4 +38,7 @@ urlpatterns = [
     path('menu/teachers_portal_student_status',views.teachers_portal_student_status),
     path('menu/student_portal_student_status',views.student_portal_student_status),
     path('menu/export_data_grades',views.export_data_grades),
+    path('menu/teachers_portal_performance',views.teachers_portal_teachers_performance),
+
+    
 ]

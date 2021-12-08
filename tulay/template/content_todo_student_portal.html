@@ -10,6 +10,7 @@
           --><link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css'%}">
           <script type="text/javascript" src="{%static '/bootstrap/js/bootstrap.min.js'%}"></script>
           <script type="text/javascript" src="{%static '/fontawesome/js/all.js'%}"></script>
+          <script src="{%static '/javascript/logout_script.js'%}"></script>
           <!--<script src="https://kit.fontawesome.com/f9a76d52b7.js" crossorigin="anonymous"></script>-->
         <title></title>
       </head>
@@ -51,7 +52,7 @@ hr{
             <div class="col"><a href=""><h6 class="nav-bar color-design">Message</h6></a></div>
             <div class="col"><a href=""><h6 class="nav-bar color-design">Calendar</h6></a></div>
             <div class="col"><div class="input-group-append"><input type="search" class="nav-bar"><button type="submit" class="btn btn-primary btn-search"><i class="fa fa-search"></i></button></div></div>
-            <div class="col"><h6 class="nav-bar color-design"><i class="fas fa-user fa-2x"></i></h6></div>
+            <div class="col"><button class="nav-bar color-design btn" onclick="logout()"><i class="fas fa-sign-out-alt fa-2x"></i></button></div>
             <!--<div class="col"><h6 class="nav-bar"><i class="far fa-bell fa-2x"></i></h6></div>
             <div class="col"><h6 class="nav-bar"><i class="fas fa-book fa-2x"></i></h6></div>-->
         </div>

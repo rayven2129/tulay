@@ -56,3 +56,5 @@ def student_portal_student_status(request):
         return render(request,"student_portal_status.html")
 def export_data_grades(request):
         return render(request,"export_data.html")
+def teachers_portal_teachers_performance(request):
+        return render(request,"teachers_portal_teachers_performance.html")
