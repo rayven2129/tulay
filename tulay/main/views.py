@@ -4,8 +4,9 @@ from django.http import HttpResponse
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.http import HttpResponseForbidden
 from .login import *
-
 def index(request):
+        return HttpResponse("<script>window.location.assign('student_login_system/')</script>")
+def login(request):
         if(request.method == "POST"):
                 stud_username = request.POST.get('student_username')
                 stud_password = request.POST.get('student_password')
@@ -34,3 +35,5 @@ def to_review_teachers_portal(request):
         return render(request,"to_review_teachers_portal.html")
 def content_todo_teachers_portal(request):
         return render(request,"content_todo_teachers_portal.html")
+def teachers_login_system(request):
+        return render(request,"teachers_login_portal.html");

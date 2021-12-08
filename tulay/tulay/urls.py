@@ -20,6 +20,8 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
+    path('student_login_system/',views.login),
+    path("teachers_login_system/",views.teachers_login_system),
     path('enrollment_page1/',views.enrollmentsystem_page1),
     path('enrollment_page2/',views.enrollmentsystem_page2),
     path('menu/left_nav/',views.left_nav),
@@ -31,5 +33,4 @@ urlpatterns = [
     path('menu/content_todo_student_portal',views.content_todo_student_portal),
     path('menu/to_review_teachers_portal',views.to_review_teachers_portal),
     path('menu/content_todo_teachers_portal',views.content_todo_teachers_portal),
-
 ]
