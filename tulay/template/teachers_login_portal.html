@@ -61,10 +61,9 @@
     </div>
     <div class="container-fluid field-div" id="user_type_login">
         <center>
-            <form action="/menu/student_portal" method="post">
+            <form action="" method="POST">
                 {% csrf_token %}
         <table>
-            
             <tr>
                 <td><input type="text" name="teachers_username" id="teachers_username" class="form-control"></td>
             </tr>
@@ -102,7 +101,6 @@
                     </center>
                 </td>
             </tr>
-        
         </table>
     </form>
     </center>
@@ -133,7 +131,7 @@
 </script>
 <script>
     document.querySelector("#showpass").onclick = function(){
-        var x = document.querySelector("#student_password");
+        var x = document.querySelector("#teachers_password");
         if(x.type == "password"){
             x.type = "text";
         }else{

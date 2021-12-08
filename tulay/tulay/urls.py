@@ -33,4 +33,9 @@ urlpatterns = [
     path('menu/content_todo_student_portal',views.content_todo_student_portal),
     path('menu/to_review_teachers_portal',views.to_review_teachers_portal),
     path('menu/content_todo_teachers_portal',views.content_todo_teachers_portal),
+    path('menu/teachers_portal_grading_system',views.teachers_portal_grading_system),
+    path('menu/teachers_portal_grading_system_content',views.teachers_portal_grading_system_content),
+    path('menu/teachers_portal_student_status',views.teachers_portal_student_status),
+    path('menu/student_portal_student_status',views.student_portal_student_status),
+    path('menu/export_data_grades',views.export_data_grades),
 ]

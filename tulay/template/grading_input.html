@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>{%load static%}
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,8 +65,11 @@
             <td> 
             </td>
             <td>
+              <button type="reset" class="btn btn-secondary">Clear</button>&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-secondary" onclick="export_data()">Export</button>
+            </td>
+            <td>
               
-              <button type="reset" class="btn btn-secondary">Clear</button>
             </td>
           </tr>
         </table>
@@ -97,22 +100,22 @@
           </thead>
           <tbody>
             <tr>
-              <td><p id="1"></p>404 missing sources</td>
-              <td><p id="2">404 missing sources</p></td>
-              <td><p id="3"></p></td>
-              <td><p id="4"></p>404 missing sources</td>
+              <td><p id="1"></p>Dela Cruz Juan</td>
+              <td><p id="2">G9-EHA</p></td>
+              <td><p id="3"></p>Math</td>
+              <td><p id="4"></p></td>
               <td><p id="5"></p></td>
               <td><p id="6"></p></td>
-              <td><p id="7"></p>404 missing sources</td>
+              <td><p id="7"></p>To be Received from Student</td>
               <td><p id="8"></p></td>
               <td><p id="9"></p></td>
-              <td><p id="10"></p>404 missing sources</td>
+              <td><p id="10"></p>To be Received from Student</td>
               <td><p id="11"></p></td>
               <td><p id="12"></p></td>
-              <td><p id="13"></p>404 missing sources</td>
+              <td><p id="13"></p>To be Received from Student</td>
               <td><p id="14"></p></td>
-              <td><p id="15"></p></td>
-              <td><p id="16"></p>404 missing sources</td>
+              <td><p id="15"></p>82</td>
+              <td><p id="16"></p>Passed</td>
             </tr>
           </tbody>
         </table>
@@ -142,4 +145,9 @@
 
   }
 
+</script>
+<script>
+  function export_data(){
+    window.open('/menu/export_data_grades')
+  }
 </script>

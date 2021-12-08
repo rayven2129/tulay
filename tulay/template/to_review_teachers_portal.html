@@ -45,21 +45,21 @@ hr{
     <div class="container">
         <div class="row">
             <div class="col"><img src="{% static 'images/logo.jpg'%}" alt="logo" class="images-logo"></div>
-            <div class="col"><a href=""><h6 class="nav-bar color-design">Home</h6></a></div>
+            <div class="col"><a href="/menu/teachers_portal"><h6 class="nav-bar color-design">Home</h6></a></div>
             <div class="col"><a href=""><h6 class="nav-bar color-design">Todo</h6></a></div>
             <div class="col"><a href=""><h6 class="nav-bar color-design">Classroom</h6></a></div>
             <div class="col"><a href=""><h6 class="nav-bar color-design">Browse Me</h6></a></div>
             <div class="col"><a href=""><h6 class="nav-bar color-design">Message</h6></a></div>
             <div class="col"><a href=""><h6 class="nav-bar color-design">Calendar</h6></a></div>
             <div class="col"><div class="input-group-append"><input type="search" class="nav-bar"><button type="submit" class="btn btn-primary btn-search"><i class="fa fa-search"></i></button></div></div>
-            <div class="col"><h6 class="nav-bar color-design"><a href="/menu/student_portal"><i class="fas fa-user fa-2x"></i></a></h6></div>
+            <div class="col"><button class="nav-bar color-design btn" onclick="logout()"><i class="fas fa-sign-out-alt fa-2x"></i></button></div>
             <!--<div class="col"><h6 class="nav-bar"><i class="far fa-bell fa-2x"></i></h6></div>
             <div class="col"><h6 class="nav-bar"><i class="fas fa-book fa-2x"></i></h6></div>-->
         </div>
         <hr>
     </div>
     <div>
-        <div class="container">
+        <div class="container"> 
             <div class="row">
                 <div class="col-md-2">
                     <iframe src="/menu/teacher_nav_portal" frameborder="0" class="left-panel"></iframe>
@@ -77,3 +77,8 @@ hr{
     </div>
 </body>
 </html>
+<script>
+    function logout(){
+        window.location.assign('/teachers_login_system')
+    }
+</script>
