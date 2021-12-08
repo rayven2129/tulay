@@ -28,7 +28,8 @@ urlpatterns = [
     path('menu/teachers_portal',views.teacher_portal, name="Teacher Portal"),
     path('menu/teacher_nav_portal',views.teacher_nav_portal, name="Teacher_NavPortal"),
     path('menu/subject',views.subject),
-    path('menu/url_review',views.url_review),
-    path('menu/review',views.review),
-    
+    path('menu/content_todo_student_portal',views.content_todo_student_portal),
+    path('menu/to_review_teachers_portal',views.to_review_teachers_portal),
+    path('menu/content_todo_teachers_portal',views.content_todo_teachers_portal),
+
 ]

@@ -39,8 +39,8 @@
             text-align: center;
             align-self: center;
         }
-		#add_class{
-			display: none;
+		.table_school_field{
+			width: 20em;
 		}
 
 	</style>
@@ -54,60 +54,7 @@
 			<h5 class="font-weight-bold">If the information is not applicable. N/A shall be written</h5>
 			<hr>
 		</div>
-        <!--<div class="container">
-            <h2>Family Background</h2>
-        </div>
-		<div class="container form-inline">
-			<label for="personal-data"><h5>Fathers Name</h5></label>
-			<input type="text" name="" id="personal-data" placeholder="Last Name" class="name-form form-control">
-			<input type="text" name="" placeholder="First Name" class="name-form form-control">
-			<input type="text" name="" placeholder="Middle Name" class="name-form form-control">
-		</div>
-		<br>
-		<div class="container form-inline">
-			<label for="date-of-birth"><h5>Date of Birth </h5></label>
-			<input type="date" name="" id="date-of-birth" class="form-control">
-            <label for="place-of-birth"><h5>Email Address</h5></label>
-			<input type="text" name="" id="place-of-birth" class="form-control">
-		</div>
         <br>
-        <div class="container">
-			<label for="contact_number"><h5>Contact Number</h5></label>
-			<input type="text" name="contact" id="contact_number" class="address-form form-control">
-		</div>
-        <br>
-        <div class="container">
-			<label for="contact_number"><h5>Occupation</h5></label>
-			<input type="text" name="contact" id="contact_number" class="address-form form-control">
-		</div>
-        <br>
-        <div class="container form-inline">
-			<label for="personal-data"><h5>Mothers Name</h5></label>
-			<input type="text" name="" id="personal-data" placeholder="Last Name" class="name-form form-control">
-			<input type="text" name="" placeholder="First Name" class="name-form form-control">
-			<input type="text" name="" placeholder="Middle Name" class="name-form form-control">
-		</div>
-		<br>
-		<div class="container form-inline">
-			<label for="date-of-birth"><h5>Date of Birth </h5></label>
-			<input type="date" name="" id="date-of-birth" class="form-control">
-            <label for="place-of-birth"><h5>Email Address</h5></label>
-			<input type="text" name="" id="place-of-birth" class="form-control">
-		</div>
-        <br>
-        <div class="container">
-			<label for="contact_number"><h5>Contact Number</h5></label>
-			<input type="text" name="contact" id="contact_number" class="address-form form-control">
-		</div>
-        <br>
-        <div class="container">
-			<label for="contact_number"><h5>Occupation</h5></label>
-			<input type="text" name="contact" id="contact_number" class="address-form form-control">
-		</div>
-		<div class="container">
-			<hr>
-		</div>--><br>
-        
 		<div class="container">
             <h2>Educational Background</h2>
         </div>
@@ -115,32 +62,18 @@
 			<table class="table table-dark">
 				<thead>
                     <tr>
-                        <th>Head</th>
                         <th>School Name</th>
                         <th>Address</th>
                         <th>School Year</th>
                     </tr>
                 </thead>
 			</table>
-            <table class="table table-dark">
+            <table class="table table-dark" id="school_table">
 				<tbody>
-					<tr id="add_class">
-						<td>
-							<input type="text" name="" id="">
-						</td>
-						<td>
-							<input type="text" name="" id="">
-						</td>
-						<td>
-							<input type="text" name="" id="">
-						</td>
-						<td>
-							<input type="text" name="" id="">
-						</td>
-					</tr>
+					
 				</tbody>
             </table>
-            <button type="button" class="btn btn-dark" id="btn_set">Add New Row</button>
+            <button type="button" class="btn btn-dark" id="btn_set" onclick="add_table()">Add New Row</button>
         </div>
         <div class="container">
 			<hr>
@@ -190,9 +123,30 @@
 		}
 	</script>
 	<script>
-		btn_set.onclick = function(){
-			var y = document.querySelector("#add_class");
-			y.style.display = "block";
+		function add_table(){
+			var x = document.getElementById("school_table")
+			var tr = document.createElement("tr");
+			tr.setAttribute("id","add_class")
+			x.appendChild(tr);
+			var tr_id = document.getElementById("tr");
+			var cell_one = tr.insertCell(0);
+			var cell_two = tr.insertCell(1);
+			var cell_three = tr.insertCell(2);
+			var school_name = document.createElement("input");
+			school_name.setAttribute("type","text");
+			school_name.setAttribute("class","table_school_field");
+			school_name.setAttribute("id","school_name");
+			cell_one.appendChild(school_name);
+			var school_address = document.createElement("input");
+			school_address.setAttribute("type","text");
+			school_address.setAttribute("class","table_school_field");
+			school_address.setAttribute("id","school_address");
+			cell_two.appendChild(school_address);
+			var school_year = document.createElement("input");
+			school_year.setAttribute("type","text");
+			school_year.setAttribute("class","table_school_field");
+			school_year.setAttribute("id","school_year");
+			cell_three.appendChild(school_year);
 		}
 	</script>
 </html>

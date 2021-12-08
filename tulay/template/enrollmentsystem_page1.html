@@ -29,6 +29,9 @@
 			border-style: solid;
 			border-color: black;
 		}
+		.btn-size{
+			width: 10em;
+		}
 
 	</style>
 	<body>
@@ -99,35 +102,35 @@
 		</div>
 		<div class="container">
 			<label for="complete_address"><h5>Complete Address*</h5></label>
-			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Street/Villages/Sitio">
+			<input type="text" name="complete_address_line_one" id="complete_address_line_one" class="address-form form-control" placeholder="Street/Villages/Sitio">
 		 	<p>Street Address Line 1</p>
 		</div>
 		<div class="container">
 			<label for="complete_address"><h5></h5></label>
-			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Barangay">
+			<input type="text" name="complete_address_line_two" id="complete_address_line_two" class="address-form form-control" placeholder="Barangay">
 		 	<p>Street Address Line 2</p>
 		</div>
 		<div class="container">
 			<div class="form-inline">
-				<input type="text" name="city" id="city" class="form-control" placeholder="City/Municipality">
-				<input type="text" name="city" id="city" class="form-control" placeholder="Province">
+				<input type="text" name="city" id="city_line_one" class="form-control" placeholder="City/Municipality">
+				<input type="text" name="province_line_one" id="province_line_one" class="form-control" placeholder="Province">
 			</div>
 		</div>	
 		<div class="container">
 			<label for="complete_address"><h5>Permanent Address*</h5></label>
 			<input type="checkbox" name="address" id="check_complete">Same as Complete Address
-			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Street/Villages/Sitio">
+			<input type="text" name="complete_address_line_one_completed" id="complete_address_line_one_completed" class="address-form form-control" placeholder="Street/Villages/Sitio">
 		 	<p>Street Address Line 1</p>
 		</div>
 		<div class="container">
 			<label for="complete_address"><h5></h5></label>
-			<input type="text" name="" id="complete_address" class="address-form form-control" placeholder="Barangay">
+			<input type="text" name="complete_address_line_two_completed" id="complete_address_line_two_completed" class="address-form form-control" placeholder="Barangay">
 		 	<p>Street Address Line 2</p>
 		</div>
 		<div class="container">
 			<div class="form-inline">
-				<input type="text" name="city" id="city" class="form-control" placeholder="City/Municipality">
-				<input type="text" name="city" id="city" class="form-control" placeholder="Province">
+				<input type="text" name="city_line_two_completed" id="city_line_two_completed" class="form-control" placeholder="City/Municipality">
+				<input type="text" name="province_line_two_completed" id="province_line_two_completed" class="form-control" placeholder="Province">
 			</div>
 		</div>
 		<br>
@@ -142,11 +145,32 @@
 		</div>
 		<br>
 		<div class="container form-inline">
-			<button type="button" class="btn btn-success" id="btn_next">Next</button>&nbsp;
-			<button type="button" class="btn btn-primary">Clear</button>
+			<button type="button" class="btn btn-success btn-size" id="btn_next">Next</button>&nbsp;
+			<button type="button" class="btn btn-primary btn-size">Clear</button>
 		</div>
 	</body>
 </html>
+<script>
+	document.getElementById("check_complete").onclick = function(){
+		var x = document.getElementById("check_complete");
+		if(x.checked == true){
+			var line_one = document.getElementById("complete_address_line_one").value;
+			document.getElementById("complete_address_line_one_completed").value = line_one;
+			var line_two = document.getElementById("complete_address_line_two").value;
+			document.getElementById("complete_address_line_two_completed").value = line_two;
+			var city_line_one = document.getElementById("city_line_one").value;
+			document.getElementById("city_line_two_completed").value = city_line_one;
+			var province_line_one = document.getElementById("province_line_one").value;
+			document.getElementById("province_line_two_completed").value = province_line_one;
+		}else{
+			document.getElementById("complete_address_line_one_completed").value = "";
+			document.getElementById("complete_address_line_two_completed").value = "";
+			document.getElementById("city_line_two_completed").value = "";
+			document.getElementById("province_line_two_completed").value = "";
+		}
+	}
+
+</script>
 <script>
 	var x = document.querySelector('#btn_next');
 		x.onclick = function(){
