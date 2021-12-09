@@ -14,31 +14,35 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from main import views 
+from main import views
+from main import student_portal
+from main import teachers_portal
 from django.urls import path
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #---------------------{Index and Login System}---------------------#
     path('',views.index),
     path('student_login_system/',views.login),
     path("teachers_login_system/",views.teachers_login_system),
     path('enrollment_page1/',views.enrollmentsystem_page1),
     path('enrollment_page2/',views.enrollmentsystem_page2),
-    path('menu/left_nav/',views.left_nav),
-    path('menu/subject_student',views.subject_student),
-    path('menu/student_portal',views.student_portal, name="Student Portal"),
-    path('menu/teachers_portal',views.teacher_portal, name="Teacher Portal"),
-    path('menu/teacher_nav_portal',views.teacher_nav_portal, name="Teacher_NavPortal"),
-    path('menu/subject',views.subject),
-    path('menu/content_todo_student_portal',views.content_todo_student_portal),
-    path('menu/to_review_teachers_portal',views.to_review_teachers_portal),
-    path('menu/content_todo_teachers_portal',views.content_todo_teachers_portal),
-    path('menu/teachers_portal_grading_system',views.teachers_portal_grading_system),
-    path('menu/teachers_portal_grading_system_content',views.teachers_portal_grading_system_content),
-    path('menu/teachers_portal_student_status',views.teachers_portal_student_status),
-    path('menu/student_portal_student_status',views.student_portal_student_status),
-    path('menu/export_data_grades',views.export_data_grades),
-    path('menu/teachers_portal_performance',views.teachers_portal_teachers_performance),
-
+    #---------------------{For Student Portal}------------------------#
+    path('menu/left_nav/',student_portal.left_nav),
+    path('menu/subject_student',student_portal.subject_student),
+    path('menu/student_portal',student_portal.student_portal, name="Student Portal"),
+    path('menu/home_student_portal',student_portal.home_student_portal),
+    path('menu/content_todo_student_portal',student_portal.content_todo_student_portal),
+    path('menu/student_portal_student_status',student_portal.student_portal_student_status),
+    #---------------------{For Teacher Portal}------------------------#
+    path('menu/teachers_portal',teachers_portal.teacher_portal, name="Teacher Portal"),
+    path('menu/teacher_nav_portal',teachers_portal.teacher_nav_portal, name="Teacher_NavPortal"),
+    path('menu/subject',teachers_portal.subject),
+    path('menu/to_review_teachers_portal',teachers_portal.to_review_teachers_portal),
+    path('menu/content_todo_teachers_portal',teachers_portal.content_todo_teachers_portal),
+    path('menu/teachers_portal_grading_system',teachers_portal.teachers_portal_grading_system),
+    path('menu/teachers_portal_grading_system_content',teachers_portal.teachers_portal_grading_system_content),
+    path('menu/teachers_portal_student_status',teachers_portal.teachers_portal_student_status),
+    path('menu/export_data_grades',teachers_portal.export_data_grades),
+    path('menu/teachers_portal_performance',teachers_portal.teachers_portal_teachers_performance),
     
 ]
