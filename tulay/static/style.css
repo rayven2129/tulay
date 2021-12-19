@@ -1,0 +1,25 @@
+.images-logo{
+    width: 8em;
+    height: 8em;
+    margin-left: -2em;
+}
+.color-design{
+    color: #808080;
+}
+.hr-border{
+    border-color: #000000;
+}
+.left-panel{
+    border-right: solid #000000;
+    width: 6em;
+    height: 32em;
+    margin-left: auto;
+}
+.content-panel{
+    width: 50em;
+    height: 32em;
+    margin-left: -4em;
+}
+.btn-search,.nav-bar{
+    margin-top: 3em;
+}
