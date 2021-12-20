@@ -25,19 +25,38 @@
 }
 
 /*For styling in classroom*/
-*{
+html{
     box-sizing: border-box;
 }
-.container-image {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    background-image: url("{%static '/images_background/math.jpeg'%}");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 20em;
-  }
-.button {
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+.column{
+    float: left;
+    width: 33.3%;
+    margin-top: 16px;
+    padding: 0 8px;
+}
+
+@media screen and (max-width: 650px){
+    .column{
+        width: 50%;
+        display: block;
+    }
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container{
+    padding: 0 16px;
+    border: dotted blue;
+}
+.container::after, .row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.button-classroom-subject {
     border: none;
     outline: 0;
     display: inline-block;
@@ -46,12 +65,8 @@
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 100%;
-}
-.button:hover {
-    background-color: #555;
-}
-.img-style-subject{
     width: 50%;
-    height: auto;
+}
+.button-classroom-subject:hover {
+    background-color: #555;
 }
