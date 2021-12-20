@@ -23,3 +23,35 @@
 .btn-search,.nav-bar{
     margin-top: 3em;
 }
+
+/*For styling in classroom*/
+*{
+    box-sizing: border-box;
+}
+.container-image {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    background-image: url("{%static '/images_background/math.jpeg'%}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20em;
+  }
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+.button:hover {
+    background-color: #555;
+}
+.img-style-subject{
+    width: 50%;
+    height: auto;
+}
