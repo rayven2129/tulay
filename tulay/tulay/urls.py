@@ -33,6 +33,8 @@ urlpatterns = [
     path('menu/home_student_portal',student_portal.home_student_portal),
     path('menu/student_portal_todo',student_portal.content_todo_student_portal),
     path('menu/student_portal_student_status',student_portal.student_portal_student_status),
+    path('menu/student_portal_classroom',student_portal.classroom_student_portal),
+    path('menu/classroom_student_portal_frame', student_portal.classroom_student_portal_frame),
 
     #---------------------{For Teacher Portal}------------------------#
     path('menu/teachers_portal',teachers_portal.teacher_portal, name="Teacher Portal"),

@@ -14,3 +14,7 @@ def student_portal_student_status(request):
         return render(request,"student_portal_status.html")
 def left_nav(request):
         return render(request,"left_nav.html")
+def classroom_student_portal(request):
+        return render(request,"classroom_student_portal.html")
+def classroom_student_portal_frame(request):
+        return render(request,"classroom_student_portal_frame.html")
