@@ -18,6 +18,7 @@ from main import views
 from main import student_portal
 from main import teachers_portal
 from django.urls import path
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     #---------------------{Index and Login System}---------------------#
@@ -35,6 +36,10 @@ urlpatterns = [
     path('menu/student_portal_student_status',student_portal.student_portal_student_status),
     path('menu/student_portal_classroom',student_portal.classroom_student_portal),
     path('menu/classroom_student_portal_frame', student_portal.classroom_student_portal_frame),
+    path('menu/student_portal_browse_me',student_portal.student_browse_me),
+    path('menu/student_portal_message',student_portal.student_portal_message),
+    path('menu/student_portal_classroom/1',student_portal.subject_student_individual),
+    path('menu/student_portal_classroom/l/submission_student_portal',student_portal.submission_student_portal),
 
     #---------------------{For Teacher Portal}------------------------#
     path('menu/teachers_portal',teachers_portal.teacher_portal, name="Teacher Portal"),

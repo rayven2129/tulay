@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>{%load static%}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static '/style.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static '/fontawesome/css/all.css'%}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css'%}">
+        <script type="text/javascript" src="{%static '/bootstrap/js/bootstrap.min.js'%}"></script>
+        <script type="text/javascript" src="{%static '/fontawesome/js/all.js'%}"></script>
+        <script src="https://kit.fontawesome.com/f9a76d52b7.js" crossorigin="anonymous"></script>
+        <script src="{%static '/javascript/logout_script.js'%}"></script>
+        <title></title>
+      </head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"><img src="{% static 'images/logo.jpg'%}" alt="logo" class="images-logo"></div>
+            <div class="col"><a href="/menu/home_student_portal"><h6 class="nav-bar color-design">Home</h6></a></div>
+            <div class="col"><a href="/menu/student_portal_todo"><h6 class="nav-bar color-design">Todo</h6></a></div>
+            <div class="col"><a href="/menu/student_portal_classroom"><h6 class="nav-bar color-design">Classroom</h6></a></div>
+            <div class="col"><a href="/menu/student_portal_browse_me"><h6 class="nav-bar color-design">Browse Me</h6></a></div>
+            <div class="col"><a href="/menu/student_portal_message"><h6 class="nav-bar color-design">Message</h6></a></div>
+            <div class="col"><div class="input-group-append"><input type="search" class="nav-bar"><button type="submit" class="btn btn-primary btn-search"><i class="fa fa-search"></i></button></div></div>
+            <div class="col"><button class="nav-bar color-design btn" onclick="logout_student()"><i class="fas fa-sign-out-alt fa-2x color-design"></i></button></div>
+        </div>
+        <hr>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="left-panel">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="bandmember" class="chatheads">
+                                    <p>Juan Dela Cruz</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="bandmember" class="chatheads">
+                                    <p>Maria Magdalena</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="message-content">
+                        <div class="receiver">
+                                <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="bandmember" class="chatheads-receiver">
+                                <span class="chat-message-content">Hello</span>
+                        </div>
+                        <div class="sender">
+                            <span class="chat-message-content">Hello</span>
+                                <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="bandmember" class="chatheads-sender">
+                               
+                        </div>
+                        <div class="receiver">
+                            <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="bandmember" class="chatheads-receiver">
+                            <span class="chat-message-content">How are You</span>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function logout(){
+        window.location.assign('/student_login_system')
+    }
+</script>

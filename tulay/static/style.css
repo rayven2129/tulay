@@ -1,3 +1,4 @@
+
 .images-logo{
     width: 8em;
     height: 8em;
@@ -23,6 +24,9 @@
 .btn-search,.nav-bar{
     margin-top: 3em;
 }
+.message-panel{
+    margin-left: 4em;
+}
 
 /*For styling in classroom*/
 html{
@@ -47,11 +51,10 @@ html{
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.container{
-    padding: 0 16px;
-    border: dotted blue;
+.container-subject{
+    text-align: center;
 }
-.container::after, .row::after{
+.container-subject::after, .row::after{
     content: "";
     clear: both;
     display: table;
@@ -60,13 +63,69 @@ html{
     border: none;
     outline: 0;
     display: inline-block;
-    padding: 8px;
     color: white;
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 50%;
+    width: 20%;
 }
 .button-classroom-subject:hover {
     background-color: #555;
+}
+.img-style-subject{
+    width: 20%;
+    height: auto;
+    display: flex;
+    text-align: center;
+    
+}
+
+
+/*message*/
+
+.chatheads{
+    width: 40px;
+    border-radius: 50%;
+    
+}
+
+.receiver{
+    box-sizing: content-box;
+}
+.sender{
+    box-sizing: content-box;
+    text-align: right;
+
+}
+.receiver .chatheads-receiver{
+    border-radius: 50%;
+    width: 60px;
+    height: auto;
+}
+.sender .chatheads-sender{
+    border-radius: 50%;
+    width: 60px;
+    height: auto;
+}
+.message-content{
+    max-width: 70em;
+}
+.chat-message-content{
+    width: auto;
+    border: solid gray;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: Arial;
+}
+/*subject content*/
+.card .content-assignment-subject{
+    padding: 4px;
+    margin-left: 40px;
+    font-size: 25px ;
+}
+.header-content{
+    height: 10em;
+    background-image: url("./images_background/math.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }

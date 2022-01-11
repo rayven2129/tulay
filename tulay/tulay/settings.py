@@ -26,7 +26,7 @@ SECRET_KEY = 'hbtto5bxbuse_0d&b&l8lvd%f3$uq3*6ii-jnx^7=ss*r5*jj2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,10 +76,7 @@ WSGI_APPLICATION = 'tulay.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+        
     }
 }
 

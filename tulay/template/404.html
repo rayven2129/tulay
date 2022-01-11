@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error 404!</title>{%load static}
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css'%}">
+<script type="text/javascript" src="{% static '/bootstrap/js/bootstrap.min.js'%}"></script>
+<style type="text/css">
+	div{
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+	img{
+		height: 15em;
+	}
+</style>
+<body>
+	<div>
+		<h2>404!Momo wasn't found the file</h2>
+	</div>
+	<div>
+		<img src="{%static '/404file/404images.jpeg'%}">
+	</div>
+	<div>
+		<p><strong>Momoring is sad, Please Return to our homepage to make she happy</strong></p>
+	</div>
+	<div>
+		<input type="button" name="button" value="Return To Home" class="btn btn-warning" onclick="window.location.assign('')">
+	</div>	
+</body>
+</html>
