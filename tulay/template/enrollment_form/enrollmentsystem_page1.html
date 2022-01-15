@@ -6,47 +6,23 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" type="text/css" href="{%static '/bootstrap/css/bootstrap.min.css'%}">
 			<script type="text/javascript" src="{%static '/bootstrap/js/bootstrap.min.js'%}"></script>
+			<link rel="stylesheet" href="{%static  '/enrollment.css' %}">
 	</head>
-	<style type="text/css">
-		.header-photo{
-			background-image: url("{%static './images/header-logo.jpg'%}");
-			background-repeat: no-repeat;
-			background-size: cover;
-			height: 10em;
-		}
-		.header-text{
-			color: white;
-			font-family: "Arial";
-		}
-		.name-form{
-			width: 15em;
-			padding-left: 5px;
-		}
-		.address-form{
-			width: 50em;
-		}
-		hr{
-			border-style: solid;
-			border-color: black;
-		}
-		.btn-size{
-			width: 10em;
-		}
-
-	</style>
 	<body>
 		<div class="container header-photo">
 			<br><br><br><br>
 			<h1 class="text-center header-text">Online Enrollment Entry</h1>
 		</div>
+		<form action="" method="POST">{%csrf_token%}
 		<div class="container">
 			<h5 class="font-weight-bold">INSTRUCTION: Please fill out all the neccesary information. Do not leave any item blank</h5>
 			<h5 class="font-weight-bold">If the information is not applicable. N/A shall be written. All * symbol are required</h5>
 			<br>
 				<label for="select-type"><h5>Student Type*</h5></label><br>
-				<input type="radio" name="stusent_type" id="stud_type" value="Regular"> Old
-				<br><input type="radio" name="stusent_type" id="stud_type" value="Regular"> New
-				<br><input type="radio" name="stusent_type" id="stud_type" value="Regular"> Transferee
+				<input type="radio" name="student_type" id="stud_type" value="old" onclick="studentType(this.value)"> Old
+				<br><input type="radio" name="student_type" id="stud_type" value="new" onclick="studentType(this.value)"> New
+				<br><input type="radio" name="student_type" id="stud_type" value="transferee" onclick="studentType(this.value)"> Transferee
+				<input type="hidden" id="choosen_student_type" name="student_status">
 				<br>
 				<br>
 				<div class="form-inline">
@@ -57,48 +33,50 @@
 		</div>
 		<div class="container form-inline">
 			<label for="personal-data"><h5>Personal Data*</h5></label>
-			<input type="text" name="" id="personal-data" placeholder="Last Name" class="name-form form-control">
-			<input type="text" name="" placeholder="First Name" class="name-form form-control">
-			<input type="text" name="" placeholder="Middle Name" class="name-form form-control">
+			<input type="text" name="last_name" id="personal-data" placeholder="Last Name" class="name-form form-control">
+			<input type="text" name="first_name" placeholder="First Name" class="name-form form-control">
+			<input type="text" name="middle_name" placeholder="Middle Name" class="name-form form-control">
 		</div>
 		<br>
 		<div class="container">
 			<label for="gender-form"><h5>Gender*</h5></label>
-			<select class="btn btn-outline-info" id="gender-form">
-				<option>Please Select</option>
-				<option>Male</option>
-				<option>Female</option>
-				<option>Other</option>
-			</select>			
+			<select class="btn btn-outline-info" id="gender_form" onchange="gender()">
+				<option value="null">Please Select</option>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option>
+			</select>
+			<input type="hidden"  name="gender_result" id="gender_result">			
 		</div>
 		<div class="container form-inline">
 			<label for="date-of-birth"><h5>Date of Birth*</h5></label>
-			<input type="date" name="" id="date-of-birth" class="form-control">
+			<input type="date" name="date_of_birth" id="date-of-birth" class="form-control">
 		</div>
 		<div class="container">
 			<label for="place-of-birth"><h5>Place of Birth*</h5></label>
-			<input type="text" name="" id="place-of-birth" class="address-form form-control">
+			<input type="text" name="place_of_birth" id="place-of-birth" class="address-form form-control">
 		</div><br>
 		<div class="container">
 			<label for="nationality-form"><h5>Nationality*</h5></label>
-			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> FILIPINO
-			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> KOREAN
-			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> JAPANESE
-			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> CHINESE
-			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> INDIAN
-			<input type="radio" name="nation_choice" id="nation" value="FILIPINO"> OTHERS			
+			<input type="radio" name="nation_choice" id="nation" value="Filipino" onclick="nation_select(this.value)"> FILIPINO
+			<input type="radio" name="nation_choice" id="nation" value="Korean" onclick="nation_select(this.value)"> KOREAN
+			<input type="radio" name="nation_choice" id="nation" value="Japanese" onclick="nation_select(this.value)"> JAPANESE
+			<input type="radio" name="nation_choice" id="nation" value="Chinese" onclick="nation_select(this.value)"> CHINESE
+			<input type="radio" name="nation_choice" id="nation" value="Indian" onclick="nation_select(this.value)"> INDIAN
+			<input type="radio" name="nation_choice" id="nation" value="Others" onclick="nation_select(this.value)"> OTHERS
+			<input type="hidden" name="nationality_value" id="nationality_value">	
 		</div>
 		<div class="container">
 			<label for="religion-form"><h5>Religion*</h5></label>
-			<select class="btn btn-outline-info" id="religion-form">
-				<option>Please Select</option>
-				<option>ROMAN CATHOLIC</option>
-				<option>INC</option>
-				<option>BORN AGAIN</option>
-				<option>CHRISTIAN</option>
-				<option>MUSLIM</option>
-				<option>OTHERS</option>
-			</select>			
+			<select class="btn btn-outline-info" id="religion_form" onchange="religion_select()">
+				<option value="null">Please Select</option>
+				<option value="roman catholic">ROMAN CATHOLIC</option>
+				<option value="iglesia ni cristo">INC</option>
+				<option value="born again">BORN AGAIN</option>
+				<option value="muslim">MUSLIM</option>
+				<option value="others">OTHERS</option>
+			</select>
+			<input type="hidden" id="religion_result" name="religion_result">			
 		</div>
 		<div class="container">
 			<label for="complete_address"><h5>Complete Address*</h5></label>
@@ -112,7 +90,7 @@
 		</div>
 		<div class="container">
 			<div class="form-inline">
-				<input type="text" name="city" id="city_line_one" class="form-control" placeholder="City/Municipality">
+				<input type="text" name="city_line_one" id="city_line_one" class="form-control" placeholder="City/Municipality">
 				<input type="text" name="province_line_one" id="province_line_one" class="form-control" placeholder="Province">
 			</div>
 		</div>	
@@ -136,19 +114,21 @@
 		<br>
 		<div class="container">
 			<label for="contact_number"><h5>Contact Number*</h5></label>
-			<input type="text" name="contact" id="contact_number" class="address-form form-control">
+			<input type="text" name="contact_number" id="contact_number" class="address-form form-control">
 		</div>
 		<br>
 		<div class="container">
-			<label for="contact_number"><h5>Email Address*</h5></label>
-			<input type="email" name="contact" id="contact_number" class="address-form form-control">
+			<label for="email_address"><h5>Email Address*</h5></label>
+			<input type="email" name="email_address" id="email_address" class="address-form form-control">
 		</div>
 		<br>
 		<div class="container form-inline">
-			<button type="button" class="btn btn-success btn-size" id="btn_next">Next</button>&nbsp;
+			<button type="submit" class="btn btn-success btn-size" id="btn_next">Next</button>&nbsp;
 			<button type="button" class="btn btn-primary btn-size">Clear</button>
 		</div>
+	</form>
 	</body>
+
 </html>
 <script>
 	document.getElementById("check_complete").onclick = function(){
@@ -177,4 +157,26 @@
 			window.location.assign('../enrollment_page2');
 		}
 
+</script>
+<script>
+	function studentType(val){
+	document.getElementById('choosen_student_type').value = val;
+	}
+</script>
+<script>
+	function gender(){
+		var x = document.getElementById('gender_form').value;
+		document.getElementById('gender_result').value = x;
+	}
+</script>
+<script>
+	function nation_select(nationality){
+		document.getElementById('nationality_value').value = nationality;
+	}
+</script>
+<script>
+	function religion_select(){
+		var x  = document.getElementById('religion_form').value;
+		document.getElementById('religion_result').value = x;
+	}
 </script>
