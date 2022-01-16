@@ -22,3 +22,19 @@ hr{
 .btn-size{
     width: 10em;
 }
+/**/
+
+
+.b-justify{
+    text-align: justify;
+    font-weight: bold;
+}
+.aling_design{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+.table_school_field{
+    width: 20em;
+}

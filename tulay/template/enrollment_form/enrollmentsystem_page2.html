@@ -5,46 +5,11 @@
 		<title></title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" type="text/css" href="{%static '/bootstrap/css/bootstrap.min.css'%}">
+			<link rel="stylesheet" href="{%static  '/enrollment.css' %}">
 			<script type="text/javascript" src="{%static '/bootstrap/js/bootstrap.min.js'%}"></script>
 	</head>
-	<style type="text/css">
-		.header-photo{
-			background-image: url("{%static './images/header-logo.jpg'%}");
-			background-repeat: no-repeat;
-			background-size: cover;
-			height: 10em;
-		}
-		.header-text{
-			color: white;
-			font-family: "Arial";
-		}
-		.name-form{
-			width: 15em;
-			padding-left: 5px;
-		}
-		.address-form{
-			width: 50em;
-		}
-		hr{
-			border-style: solid;
-			border-color: black;
-		}
-        .b-justify{
-            text-align: justify;
-            font-weight: bold;
-        }
-        .aling_design{
-            display: flex;
-            align-items: center;
-            text-align: center;
-            align-self: center;
-        }
-		.table_school_field{
-			width: 20em;
-		}
-
-	</style>
 	<body>
+		<form action="" method="post">
 		<div class="container header-photo">
 			<br><br><br><br>
 			<h1 class="text-center header-text">Online Enrollment Entry</h1>
@@ -112,10 +77,11 @@
         <br>
         <div class="container">
             <center>
-                <button class="btn btn-success" id="load_to_main"><h2>Register</h2></button>
-                <button class="btn btn-danger"><h2>Cancel</h2></button>
+                <button class="btn btn-success" id="load_to_main" type="submit"><h2>Register</h2></button>
+                <button class="btn btn-danger" type="button" onclick="window.location.assign('../')"><h2>Cancel</h2></button>
             </center>
         </div>
+	</form>
 	</body>
 	<script>
 		function add_table(){
@@ -130,16 +96,19 @@
 			var school_name = document.createElement("input");
 			school_name.setAttribute("type","text");
 			school_name.setAttribute("class","table_school_field");
+			school_name.setAttribute("name","school_name")
 			school_name.setAttribute("id","school_name");
 			cell_one.appendChild(school_name);
 			var school_address = document.createElement("input");
 			school_address.setAttribute("type","text");
 			school_address.setAttribute("class","table_school_field");
+			school_address.setAttribute("name","school_address");
 			school_address.setAttribute("id","school_address");
 			cell_two.appendChild(school_address);
 			var school_year = document.createElement("input");
 			school_year.setAttribute("type","text");
 			school_year.setAttribute("class","table_school_field");
+			school_year.setAttribute("name","school_year");
 			school_year.setAttribute("id","school_year");
 			cell_three.appendChild(school_year);
 		}
